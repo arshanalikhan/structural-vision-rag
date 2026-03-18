@@ -41,3 +41,9 @@ The architecture is divided into two primary engines communicating via a local A
    ```bash
    git clone [https://github.com/yourusername/structural-vision-rag.git](https://github.com/yourusername/structural-vision-rag.git)
    cd structural-vision-rag
+
+2. **Install dependencies:**
+
+```bash
+pip install flask faiss-cpu sentence-transformers torch ultralytics opencv-python scipy pymupdf
+
