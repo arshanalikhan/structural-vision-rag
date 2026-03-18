@@ -2,7 +2,7 @@
 
 > An offline Retrieval-Augmented Generation (RAG) system with custom Computer Vision integration for automated IS Code structural auditing.
 
-**Inventors/Lead Engineers:** Arshan Ali Khan & Mohd Shahzil
+**Inventors/Lead Engineers:** Arshan Ali Khan
 
 ---
 
