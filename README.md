@@ -2,7 +2,7 @@
 
 > An offline Retrieval-Augmented Generation (RAG) system with custom Computer Vision integration for automated IS Code structural auditing.
 
-**Inventors/Lead Engineers:** Arshan Ali Khan
+**Inventor / Lead Engineer:** Arshan Ali Khan
 
 ---
 
@@ -38,12 +38,35 @@ The architecture is divided into two primary engines communicating via a local A
 **Prerequisites:** Python 3.8+ and a C++ build environment (for FAISS).
 
 1. **Clone the repository:**
-   ```bash
-   git clone [https://github.com/yourusername/structural-vision-rag.git](https://github.com/yourusername/structural-vision-rag.git)
-   cd structural-vision-rag
+```bash
+git clone [https://github.com/arshanalikhan/structural-vision-rag.git](https://github.com/arshanalikhan/structural-vision-rag.git)
+cd structural-vision-rag
+```
 
 2. **Install dependencies:**
-
 ```bash
 pip install flask faiss-cpu sentence-transformers torch ultralytics opencv-python scipy pymupdf
+```
 
+3. **Run the NLP Server:**
+```bash
+python app.py
+```
+*The server will boot up and host the Chat UI at `http://127.0.0.1:5000`.*
+
+4. **Run the Vision Auditor (in a separate terminal):**
+```bash
+python vision_auditor.py
+```
+
+## 🔮 Future Roadmap (Scaling & Miniaturization)
+
+We are actively developing the architecture to scale from a laptop prototype to an enterprise edge-device:
+
+* **O(1) Time Complexity via Caching:** Implementing an in-memory Python dictionary cache to store retrieved FAISS rules, eliminating redundant vector searches for identical defect classes during live video feeds.
+* **Dynamic Scale Calibration:** Integrating **OpenCV ArUco marker detection** to replace hardcoded pixel-to-metric ratios, ensuring mathematically perfect measurements regardless of camera angle or distance.
+* **Multi-Document RAG:** Expanding the vector database with metadata routing to include additional critical codes (e.g., IS 800 for Steel Structures, IS 1893 for Earthquake Resistance).
+* **Edge AI (TinyML):** Applying INT8 post-training quantization to the YOLO and BERT models, transitioning the pipeline to C++, and deploying the suite on a Raspberry Pi Zero 2 W as a wearable, offline hardhat camera.
+
+---
+*Designed for the future of Construction Technology (ConTech).*
